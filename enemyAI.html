@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            body {
+                overflow: hidden;
+                min-height: 100%;
+            }
+            #tb {
+                height:80vh;
+                width:80vh;
+                margin: 0 auto;
+                vertical-align: middle;
+            }
+            #tb tr td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="tb">
+            
+        </table>
+        <script>
+            const TABLE_SIZE = 15;
+
+            createTable();
+
+            function createTable(){
+                var createTR = document.createElement("TR");
+                var createTD = document.createElement("TD");
+
+                var mainTable = document.getElementById("tb");
+
+                for(var i = 1; i <= TABLE_SIZE; i++) {
+                    for (var j = 1; j <= TABLE_SIZE; j++) {
+                        createTD = document.createElement("TD");
+                        idCount = i * TABLE_SIZE + j;
+                        createTD.setAttribute('id', j+','+i);
+                        createTR.appendChild(createTD);
+                        createTD = document.createElement("TD");
+                    }
+                    mainTable.appendChild(createTR);
+
+                    createTR = document.createElement("TR");
+                }
+            }
+        </script>
+    </body>
+</html>
